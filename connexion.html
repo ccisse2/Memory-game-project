@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="text-container" id="">
+      <h1>ENI - <span class="memory">MEMORY</span> - Accueil</h1>
+    </div>
+
+    <!-----------NAVBAR ----------->
+    <div class="navBar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Accueil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inscrire.html">S'inscrire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="connexion.html">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Jouer.html">Jouer</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <form id="pageConnexion">
+        <h2>Connectez-vous.</h2>
+        <div class="insciption">
+          <label for="conexuserName">Nom d'utilisateur</label>
+          <input
+            type="text"
+            id="conexuserName"
+            placeholder="votre nom d'utilisateur"
+          />
+          <p id="invalideUtilisateur"></p>
+        </div>
+        <div class="insciption">
+          <label for="conexMdp">Mot de passe</label>
+          <input
+            type="password"
+            id="conexMdp"
+            placeholder="votre mot de passe"
+          />
+          <p id="invalideMotdepasse"></p>
+        </div>
+        <div class="btn-submit">
+          <button type="submit" id="connexion">Connexion</button>
+          <button type="reset">Annuler</button>
+        </div>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

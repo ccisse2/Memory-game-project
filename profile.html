@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="text-container" id="">
+      <h1>ENI - <span class="memory">MEMORY</span> - Accueil</h1>
+    </div>
+
+    <!-----------------------------------------------  NAVBAR  ------------------------------------------------->
+    <div class="navBar">
+      <nav class="navbar">
+        <div class="" id="navbarText">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Accueil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inscrire.html">S'inscrire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="connexion.html">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Jouer.html">Jouer</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div id="ProfileUtilisateur">
+        <div class="Profil">
+          <h3>Profil</h3>
+          <img
+            src="./asset/icon-profil.png"
+            id="icon-profil"
+            alt="poit d'intérogation"
+          />
+        </div>
+
+        <div class="insciption">
+          <label for="affichageEmailUtilisateur"><strong>Nom d'utilisateur :</strong> <span id="affichageProfilUtilisateur"></span> </label>
+          <p id="affichageProfilUtilisateur"></p>
+        </div>
+        <div class="insciption">
+          <label for="affichageEmailUtilisateur"><strong>E-mail : </strong><span id="affichageEmailUtilisateur"></span> </label>
+        </div>
+        <div class="insciption">
+          <label for="choixMemory">Choix du Memory</label>
+          <select name="choix du memory " id="choixMemory">
+            <option value="animaux">Animaux</option>
+            <option value="alphabetScrable">alphabet-scrable</option>
+            <option value="animauxAnimes">Annimaux Animes</option>
+            <option value="Chiens">Chiens</option>
+            <option value="dinosaures">Dinosaures</option>
+            <option value="memoryLegume">Memory Legumes</option>
+          </select>
+        </div>
+        <div id="exempleChoix">
+          <img
+            id="test"
+            src="./asset/animaux/memory_detail_animaux.png"
+            alt=""
+          />
+        </div>
+        <div id="tailleMemory">
+          <label for="choixTailleMemory">Taile du Memory</label>
+          <select name="choixTailleMemory" id="choixTailleMemory">
+            <option value="4fois3">4*3</option>
+          </select>
+        </div>
+        <div id="enregistrerOption">
+          <button type="submit">Enregister Option</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
