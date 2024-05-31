@@ -4,19 +4,23 @@ let imagesRevealed = [];
 let decompte = 0;
 
 // Tableau initial avec le maximum d'images
+//récuperer le choix memory de l'utilisateur connecté pour afficher les images correspondantes
+let utilisateurConnecte = JSON.parse(
+  localStorage.getItem('utilisateurConnecte')
+);
+let choixMemory = utilisateurConnecte.choixMemory;
+console.log(choixMemory);
 const allImagePaths = [
-  './asset/animaux/1.webp',
-  './asset/animaux/2.webp',
-  './asset/animaux/3.webp',
-  './asset/animaux/4.webp',
-  './asset/animaux/5.webp',
-  './asset/animaux/6.webp',
-  './asset/animaux/7.webp',
-  './asset/animaux/8.webp',
-  './asset/animaux/9.webp',
-  './asset/animaux/10.webp',
-  './asset/animaux/11.webp',
-  './asset/animaux/12.webp',
+  './asset/' + choixMemory + '/1.webp',
+  './asset/' + choixMemory + '/2.webp',
+  './asset/' + choixMemory + '/3.webp',
+  './asset/' + choixMemory + '/4.webp',
+  './asset/' + choixMemory + '/5.webp',
+  './asset/' + choixMemory + '/6.webp',
+  './asset/' + choixMemory + '/7.webp',
+  './asset/' + choixMemory + '/8.webp',
+  './asset/' + choixMemory + '/9.webp',
+  './asset/' + choixMemory + '/10.webp',
 ];
 
 // Fonction pour sélectionner aléatoirement  images du tableau initial
