@@ -6,7 +6,7 @@ body {
   display: block;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 150vh;
   background: linear-gradient(
     135deg,
     #1a2a6c,
@@ -26,10 +26,10 @@ main {
   max-width: 50%;
   display: block;
   color: white;
-  min-height: 200px;
+  min-height: 20px;
   background: black;
   margin-left: 30%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border: 1px solid white;
   border-radius: 20px;
   padding: 20px;
