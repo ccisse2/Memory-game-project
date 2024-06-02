@@ -8,8 +8,9 @@ let decompte = 0;
 let utilisateurConnecte = JSON.parse(
   localStorage.getItem('utilisateurConnecte')
 );
+
 let choixMemory = utilisateurConnecte.choixMemory;
-console.log(choixMemory);
+
 const allImagePaths = [
   './asset/' + choixMemory + '/1.webp',
   './asset/' + choixMemory + '/2.webp',
@@ -125,7 +126,8 @@ function playJeu(event) {
 function checkWin() {
   const matchedImages = document.querySelectorAll('.matched');
   if (matchedImages.length === images.length) {
-    alert('Vous avez gagné !'); // Affiche un message de victoire
+    alert('vous avez gagné'); // Affiche un message de victoire
+    remplirTableau();
   }
 }
 
@@ -152,3 +154,45 @@ function initializeGame() {
   // Réinitialiser les variables de jeu
   imagesRevealed = [];
 }
+
+//Fonction pour remplir le tableau des deux meilleurs scores
+function remplirTableau() {
+  let utilisateurConnecte = JSON.parse(
+    localStorage.getItem('utilisateurConnecte')
+  );
+
+  let score = decompte + 1;
+  let nom = utilisateurConnecte.username;
+
+  let tableau = JSON.parse(localStorage.getItem('tableau')) || [];
+
+  let meilleurScore = {
+    nom: nom,
+    score: score,
+  };
+
+  tableau.push(meilleurScore);
+
+  tableau.sort((a, b) => a.score - b.score);
+
+  if (tableau.length > 2) {
+    tableau.pop();
+  }
+
+  localStorage.setItem('tableau', JSON.stringify(tableau));
+}
+
+
+  let navbar = document.querySelector('nav');
+  if (navbar) {
+    window.addEventListener('scroll', function () {
+      console.log(window.scrollY);
+      if (window.scrollY > 80) {
+        navbar.classList.add('navbar-scroll');
+      } else {
+        navbar.classList.remove('navbar-scroll');
+      }
+    });
+  } else {
+    console.error('Element with ID "navbar" not found');
+  }

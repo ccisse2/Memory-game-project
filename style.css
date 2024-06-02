@@ -1,3 +1,5 @@
+/*--------------------------------------------Réorganiser tout le css----------------------------------------------------*/
+/*--------------------------------------------GENERAL----------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +24,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/*--------------------------------------------MAIN----------------------------------------------------*/
+
 main {
   max-width: 50%;
   display: block;
@@ -37,6 +41,20 @@ main {
 }
 
 /*--------------------------------------------HEADER TOUTE LES PAGES----------------------------------------------------*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background: black;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Pour donner un effet de profondeur */
+  margin-bottom: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #00ff60a8;
+}
+
 .text-container {
   display: flex;
   justify-content: space-around;
@@ -46,7 +64,6 @@ main {
   margin-top: 10px;
   font-size: 30px;
 }
-
 .navBar {
   width: 50%;
   background: black;
@@ -68,12 +85,26 @@ main {
   text-decoration: none;
   color: white;
 }
-
+.nav-link:hover {
+  color: #ab2f71;
+  cursor: pointer;
+}
 .regleJeu h4 {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
+.regleJeu ul {
+  list-style-type: none;
+}
+.regleJeu ul li {
+  margin: 10px 20px;
+}
+.regleJeu ul li img {
+  width: 50%;
+}
+.regleJeu ul li p {
+  margin-top: 10px;
+}
 .listRegle li {
   margin: 10px 20px;
 }
@@ -90,20 +121,20 @@ main {
 }
 
 /*-------------------PAGE INSCRIPTION---------------------------------------------------------------------------------*/
+
 h2 {
   text-align: center;
+}
+.inscription p {
+  opacity: 30%;
+  font-size: x-small;
+  margin-top: 5px;
 }
 .insciption {
   display: flex;
   flex-direction: column;
   border: none;
   margin-top: 20px;
-}
-
-.insciption p {
-  opacity: 30%;
-  font-size: x-small;
-  margin-top: 5px;
 }
 
 .insciption input {
@@ -248,8 +279,8 @@ h2 {
   cursor: pointer;
 }
 .hoverJeu {
-  width: 22%;
-  height: 22%;
+  width: 21%;
+  height: 21%;
   margin: 10px;
   border: blueviolet;
   border-radius: 7px;
@@ -283,9 +314,71 @@ h2 {
 .play_the_game {
   display: none;
 }
+
+#tableauScore {
+  padding: 10px;
+  border-radius: 10px;
+  width: 20%;
+  height: 23%;
+  display: block;
+  text-align: center;
+  align-self: center;
+  position: absolute;
+  right: 10%;
+  top: 35%;
+}
+
+#tableauScore td {
+  padding: 4px;
+  align-self: center;
+  border: 1px solid white;
+  font-size: x-small;
+}
+
+#tableauScore th {
+  padding: 10px;
+  align-self: center;
+  border: 1px solid white;
+}
+/*mettre mon tableau a droite de la division de id= "jeu" */
+
 /*--------------------------------Responsive avec les media queries------------------------------------*/
+@media screen and (min-width: 730px) {
+  .navbar-scroll {
+    position: fixed;
+    top: 0;
+    width: 96%;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 1000;
+    background: black;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Pour donner un effet de profondeur */
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #00ff60a8;
+  }
+}
 
 @media screen and (max-width: 730px) {
+  .play_the_game {
+    display: none;
+  }
+  .play_the_game1 {
+    display: none;
+  }
+  .navbar-scroll {
+    position: fixed;
+    top: 0;
+    width: 85%;
+    z-index: 1000;
+    background: black;
+    margin: 0px 0px;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #00ff60a8;
+  }
   .navBar {
     width: 80vw;
     margin: 5vh auto;
@@ -306,7 +399,7 @@ h2 {
     margin-right: auto;
     max-width: 70%;
   }
-  #start {
+  .play_the_game1 {
     position: absolute;
     font-size: 50px;
     top: 190px;
@@ -314,6 +407,12 @@ h2 {
   }
 }
 @media screen and (max-width: 600px) {
+  .play_the_game {
+    display: none;
+  }
+  .play_the_game1 {
+    display: none;
+  }
   .navBar {
     width: 80vw;
     margin: 5vh auto;
@@ -333,7 +432,7 @@ h2 {
     margin-right: auto;
     max-width: 70%;
   }
-  #start {
+  .play_the_game1 {
     position: absolute;
     font-size: 50px;
     top: 190px;
@@ -341,6 +440,27 @@ h2 {
   }
 }
 @media screen and (max-width: 480px) {
+  .play_the_game {
+    display: none;
+  }
+  .play_the_game1 {
+    display: none;
+  }
+  .navbar-scroll {
+    width: 70px;
+    max-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-top: 66px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    margin-left: 2px;
+  }
   .navBar {
     width: 70px;
     max-height: 100vh;
@@ -394,7 +514,7 @@ h2 {
     margin-top: 5%;
     max-width: 70%;
   }
-  #start {
+  .play_the_game1 {
     position: absolute;
     font-size: 50px;
     top: 190px;
@@ -405,7 +525,4 @@ h2 {
   .text-container {
     font-size: 10px;
   }
-
-
-
 }
